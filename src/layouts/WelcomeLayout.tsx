@@ -1,5 +1,7 @@
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
+import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
+import { useSwipe } from '../hooks/useSwipe'
 import s from './WelcomeLayout.module.scss'
 const linkMap: Record<string, string> = {
   '/welcome/1': '/welcome/2',
@@ -9,13 +11,23 @@ const linkMap: Record<string, string> = {
 }
 export const WelcomeLayout: React.FC = () => {
   const location = useLocation()
+  const nav = useNavigate()
+  const main = useRef<HTMLElement>(undefined)
+  const { direction } = useSwipe(main)
+  useEffect(() => {
+    if (direction === 'left') {
+      setTimeout(() => {
+        nav(linkMap[location.pathname])
+      }, 1000)
+    }
+  }, [direction, location.pathname, linkMap])
   return (
     <div className={s.bodyWrap}>
       <header className={s.headerWrap}>
         <img className={s.logoWrap} src={logo} alt="logo" />
-        <h1 className={s.titleWrap}>记账本{location.pathname}</h1>
+        <h1 className={s.titleWrap}>记账本</h1>
       </header>
-      <div className={s.contentWrap}>
+      <div ref={main} className={s.contentWrap}>
         <Outlet />
       </div>
       <footer className={s.footerWrap}>
