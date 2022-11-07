@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, Route, RouterProvider } from 'react-router-dom'
 import { App } from './App'
 import { router } from './routes/router'
-
+import './global.scss'
 
 
 

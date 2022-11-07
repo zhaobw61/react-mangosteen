@@ -11,11 +11,12 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
-    errorElement: <RedirectToWelcome></RedirectToWelcome>,
+    errorElement: <RedirectToWelcome />,
     children: [
       {
         path: 'welcome',
         element: <WelcomeLayout />,
+        errorElement:<div>loading error</div>,
         children: [
           { path: '1', element: <Welcome1 /> },
           { path: '2', element: <Welcome2 /> },

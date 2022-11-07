@@ -4,7 +4,7 @@ export const Welcome1: React.FC = () => {
   return (
   <div>
     <img src={p1}></img>
-    <h2>
+    <h2 className={s.titleWrap}>
       会挣钱<br/>
       还要会省钱
     </h2>
