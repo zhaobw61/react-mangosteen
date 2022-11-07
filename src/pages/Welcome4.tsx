@@ -1,5 +1,5 @@
-import s from "./welcome.module.scss";
-import p4 from "../assets/images/wel4.svg";
+import p4 from '../assets/images/wel4.svg'
+import s from './welcome.module.scss'
 export const Welcome4: React.FC = () => {
   return (
     <div>
@@ -11,9 +11,4 @@ export const Welcome4: React.FC = () => {
     </div>
   )
 }
-
-
-
-
-
 

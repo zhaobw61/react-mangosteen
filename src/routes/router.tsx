@@ -1,4 +1,4 @@
-import { createBrowserRouter, Route, RouterProvider, Outlet, NavLink } from 'react-router-dom'
+import { createBrowserRouter } from 'react-router-dom'
 import { RedirectToWelcome } from '../components/RedirectToWelcome'
 import { MainLayout } from '../layouts/MainLayout'
 import { WelcomeLayout } from '../layouts/WelcomeLayout'
@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
       {
         path: 'welcome',
         element: <WelcomeLayout />,
-        errorElement:<div>loading error</div>,
+        errorElement: <div>loading error</div>,
         children: [
           { path: '1', element: <Welcome1 /> },
           { path: '2', element: <Welcome2 /> },
