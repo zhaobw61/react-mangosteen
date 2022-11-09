@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../assets/images/logo.png'
 import { useSwipe } from '../hooks/useSwipe'
+import { useLocalStore } from '../stores/useLocalStore'
 import s from './WelcomeLayout.module.scss'
 const linkMap: Record<string, string> = {
   '/welcome/1': '/welcome/2',
@@ -21,6 +22,10 @@ export const WelcomeLayout: React.FC = () => {
       }, 1000)
     }
   }, [direction, location.pathname, linkMap])
+  const { setHasReadWelcomes } = useLocalStore()
+  const onSkip = () => {
+    setHasReadWelcomes('yes')
+  }
   return (
     <div className={s.bodyWrap}>
       <header className={s.headerWrap}>
@@ -32,7 +37,7 @@ export const WelcomeLayout: React.FC = () => {
       </div>
       <footer className={s.footerWrap}>
         <Link className={s.foontCenter} to={linkMap[location.pathname]}>下一页</Link>
-        <Link className={s.foontRight} to="/welcome/xxx">跳过</Link>
+        <Link className={s.foontRight} to="/home" onClick={onSkip} >跳过</Link>
       </footer>
     </div>
   )
