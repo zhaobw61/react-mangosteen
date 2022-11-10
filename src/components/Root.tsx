@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { useLocalStore } from '../stores/useLocalStore'
 
 export const Root: React.FC = () => {
