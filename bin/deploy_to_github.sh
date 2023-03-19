@@ -6,5 +6,5 @@ git init
 git add .
 git commit -m deploy
 git remote add origin git@github.com:zhaobw61/react-mangosteen-preview.git
-git push -f origin main:main
+git push -f origin master:master
 cd -

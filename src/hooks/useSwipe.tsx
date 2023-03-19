@@ -1,3 +1,4 @@
+import type { RefObject } from 'react'
 import { useEffect, useRef, useState } from 'react'
 
 export const useSwipe = (elementRef: RefObject<HTMLElement>) => {

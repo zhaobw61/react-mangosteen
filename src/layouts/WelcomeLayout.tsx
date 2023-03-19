@@ -13,7 +13,7 @@ const linkMap: Record<string, string> = {
 export const WelcomeLayout: React.FC = () => {
   const location = useLocation()
   const nav = useNavigate()
-  const main = useRef<HTMLElement>(undefined)
+  const main = useRef<HTMLElement>(null)
   const { direction } = useSwipe(main)
   useEffect(() => {
     if (direction === 'left') {
