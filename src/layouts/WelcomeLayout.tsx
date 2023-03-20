@@ -24,7 +24,7 @@ export const WelcomeLayout: React.FC = () => {
   }, [direction, location.pathname, linkMap])
   const { setHasReadWelcomes } = useLocalStore()
   const onSkip = () => {
-    setHasReadWelcomes('yes')
+    setHasReadWelcomes(true)
   }
   return (
     <div className={s.bodyWrap}>
