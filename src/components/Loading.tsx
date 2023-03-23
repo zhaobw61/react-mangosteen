@@ -1,5 +1,10 @@
+import loadingSVG from '../assets/icons/loading.svg'
+import styles from './loading.module.scss'
+
 export default function Loading() {
   return (
-    <div>加载中</div>
+    <div className={styles.loadingSvgWrap}>
+      <img src={loadingSVG} alt="" />
+    </div>
   )
 }

@@ -19,12 +19,11 @@ export const Home: React.FC<Props> = (props) => {
     const response = await ajax.get<Resources<Item>>(path)
     return response.data
   })
-
   const isLoadingMe = !meData && !meError
   const isLoadingItems = meData && !itemsData && !itemsError
 
-  if (isLoadingMe || isLoadingItems)
-    return <Loading />
+  // if (isLoadingMe || isLoadingItems)
+  return <Loading />
 
   // if (itemsData?.resources[0])
   //   return <Navigate to="/items" />
