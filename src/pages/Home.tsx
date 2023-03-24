@@ -22,11 +22,11 @@ export const Home: React.FC<Props> = (props) => {
   const isLoadingMe = !meData && !meError
   const isLoadingItems = meData && !itemsData && !itemsError
 
-  // if (isLoadingMe || isLoadingItems)
-  return <Loading />
-
-  // if (itemsData?.resources[0])
-  //   return <Navigate to="/items" />
+  if (isLoadingMe || isLoadingItems)
+    return <Loading />
+  // 存在记账的记录
+  if (itemsData?.resources[0])
+    return <Navigate to="/items" />
 
   return (
     <div>
