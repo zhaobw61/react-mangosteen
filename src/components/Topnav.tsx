@@ -6,7 +6,7 @@ export const Topnav: React.FC = () => {
   return (
     <div className={styles.topNavWrap}>
       <img src={listSVG} alt="" />
-      <h1>TRON 记账</h1>
+      <h1>TRON </h1>
     </div>
   )
 }
