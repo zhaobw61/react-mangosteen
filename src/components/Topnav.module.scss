@@ -1,0 +1,14 @@
+.topNavWrap {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  img {
+    width: 24px;
+    height: 24px;
+    margin-right: 16px;
+  }
+  h1 {
+    color: #fff;
+    font-size: 24px;
+  }
+}
