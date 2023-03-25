@@ -1,0 +1,17 @@
+.ItemsPageWrap {
+  display: flex;
+  background-color: #252A43;
+  margin: 16px;
+  border-radius: 8px;
+  padding: 12px;
+  justify-content: space-between;
+  .incomeItem {
+    color: #FE7275;
+  }
+  .payOutItem {
+    color: #53A867;
+  }
+  .netInComeItem {
+    color: #fff;
+  }
+}

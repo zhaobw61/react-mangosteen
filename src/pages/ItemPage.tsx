@@ -15,8 +15,8 @@ export const ItemPage: React.FC = () => {
         <Topnav />
         <TimeRangerPicker selected={timeRange} onSelected={setTimeRange} />
       </div>
-      <ItemsSummary />
       <ItemsPage />
+      <ItemsSummary />
       <AddItemFloatButton />
     </div>
   )
