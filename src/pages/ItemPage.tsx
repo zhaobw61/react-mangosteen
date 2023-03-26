@@ -4,7 +4,8 @@ import type { TimeRange } from '../components/TimeRangerPicker'
 import { TimeRangerPicker } from '../components/TimeRangerPicker'
 import { TopNav } from '../components/TopNav'
 import { TopMenu } from '../components/TopMenu'
-import { MenuContext } from '../contexts/menuContext'
+// import { MenuContext } from '../contexts/menuContext'
+import { useMenuStore } from '../stores/useMenuStore'
 import { ItemsList } from './ItemsPage/ItemsList'
 import { ItemsSummary } from './ItemsPage/ItemsSummary'
 import styles from './ItemPage.module.scss'
@@ -41,13 +42,14 @@ export const ItemPage: React.FC = () => {
       deleted_at: 's123123tring'
     }
   ])
-  const [visible, setVisible] = useState(false)
+  // const [visible, setVisible] = useState(false)
+  const { visible } = useMenuStore()
   return (
     <div>
-      <MenuContext.Provider value={{
+      {/* <MenuContext.Provider value={{
         visible,
         setVisible
-      }}>
+      }}> */}
         <div className={styles.navWrap}>
           <TopNav />
           <TimeRangerPicker selected={timeRange} onSelected={setTimeRange} />
@@ -56,7 +58,7 @@ export const ItemPage: React.FC = () => {
         <ItemsList items={items} />
         <AddItemFloatButton />
         { visible ? <TopMenu /> : null}
-      </MenuContext.Provider>
+      {/* </MenuContext.Provider> */}
     </div>
   )
 }
